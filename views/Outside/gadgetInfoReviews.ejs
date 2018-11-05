@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gadget Info</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+  	<link rel="stylesheet" type="text/css" href="CSS/reviewsFilp.css">
+  	<!--CDN for nav bar-->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<!--CDN for footer+social buttons-->
+  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" type="text/css" href="CSS/socialButtons.css">
+  	<!--CDN for JS-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<style>
+		#star {
+		  font-size:18px;
+		}
+		#star2 {
+		  font-size:18px;
+		}
+		#recommend {
+		  font-size:22px;
+		}
+		#recommend2 {
+		  font-size:22px;
+		}
+    	img {
+    		width: 80px; height: 80px;
+    	}
+	</style>
+</head>
+<body>
+	<!--Header-->
+	<div>
+		<nav class="navbar navbar-inverse">
+		  <div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>                        
+		      </button>
+		      <a class="navbar-brand" href="/">GadTo</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav navbar-right">
+		      	<li><a href="/">Home</a></li>
+		      	<form class="navbar-form navbar-left" action="#">
+				  	<div class="input-group">
+				    	<input type="text" class="form-control" placeholder="Search.." name="search">
+				        <div class="input-group-btn">
+				          <button class="btn btn-default" type="submit">
+				            <i class="glyphicon glyphicon-search"></i>
+				          </button>
+				        </div>
+					</div>
+			  	</form>
+		        <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+	</div>
+	<!--<div style="margin-top: 200px;">
+		<a href="#" class="fa fa-facebook"></a><br/>
+		<a href="#" class="fa fa-twitter"></a><br/>
+		<a href="#" class="fa fa-google-plus"></a><br/>
+		<a href="#" class="fa fa-linkedin"></a><br/>
+		<a href="#" class="fa fa-pinterest"></a><br/>
+	</div>-->
+	<div class="container">
+	    <div class="row">
+	        <div class="col-lg-3">
+	        	<div class="jumbotron" style="background-color: white;">
+	            	<img class="img-responsive" src="../Images/Gadgets/.jpg" alt="Gadget Image" style="width:300px; height:400px;">
+	        	</div>
+	        </div>
+	        <div class="col-lg-9">
+	        	<div class="jumbotron" style="background-color: white;">
+		        	<div class="container">
+		  				<h2></h2>
+					    <ul class="nav nav-tabs">
+						    <li><a href="/gadgetinfo">Specifications</a></li>
+						    <li><a href="/gadgetinfoprices/">Prices</a></li>
+						    <li class="active"><a href="/gadgetinforeviews/">Reviews</a></li>
+					    </ul>
+						    <div class="container-fluid">
+								<div class="row">
+								    <div class="col-lg-6">
+								        <div class="flip-card">
+										  <div class="flip-card-inner">
+										    <div class="flip-card-front">
+										      <img src="../Images/seeReviews.png" alt="See Reviews" style="width:300px;height:300px;">
+										      <div class="content-front">
+											    <h3>See Reviews</h3>
+											  </div>
+										    </div>
+										    <div class="flip-card-back">
+										    	<div class="content-back-up">
+											    <h3><button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#rGadget" data-backdrop="static">Gadget</button></h3>
+											  	</div>
+										    	<div class="content-back-down">
+											    <h3><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#rCompany" data-backdrop="static">E-commerce Company</button></h3>
+											  	</div>
+										    </div>
+										  </div>
+										</div>
+										<!-- Modal -->
+										<div class="modal fade" id="rGadget" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										  <div class="modal-dialog modal-lg" role="document">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <h5 class="modal-title" id="exampleModalLongTitle">List of reviews about this gadget</h5>
+										        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										          <span aria-hidden="true">&times;</span>
+										        </button>
+										      </div>
+										      <div class="modal-body">
+										        <div class="container">
+										        	<table class="table table-sm" style="background-color: aliceblue;">
+													  <tbody>
+													    <tr>
+													      <td><img src="../Images/img_avatar.png" alt="Avatar" style="width:50px; border-radius: 50%;"><br/><small><b>Username:</b> rashed</small></td>
+													      <td><pre><div><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star-empty"></i></div><div>Love n like it.</div><div><small>30-Oct-2018</small></div></pre></td>
+													    </tr>
+													    <tr>
+													      <td><img src="../Images/img_avatar2.png" alt="Avatar" style="width:50px; border-radius: 50%;"><br/><small><b>Username:</b> ayesha</small></td>
+													      <td><pre><div><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i><i class="glyphicon glyphicon-star"></i></div><div>Awesome!</div><div><small>31-Oct-2018</small></div></pre></td>
+													    </tr>
+													  </tbody>
+													</table>
+										        </div>
+										      </div>
+										      <div class="modal-footer">
+										        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+										      </div>
+										    </div>
+										  </div>
+										</div>
+										<!-- Modal -->
+										<div class="modal fade" id="rCompany" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+										  <div class="modal-dialog modal-lg" role="document">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <h5 class="modal-title" id="exampleModalLongTitle">List of reviews about e-commerce comapanies</h5>
+										        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										          <span aria-hidden="true">&times;</span>
+										        </button>
+										      </div>
+										      <div class="modal-body">
+										        <div class="container">
+										        	<table class="table table-sm" style="background-color: powderblue;">
+													  <tbody>
+													      <h2>No review yet!</h2>
+													  </tbody>
+													</table>
+										        </div>
+										      </div>
+										      <div class="modal-footer">
+										        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+										      </div>
+										    </div>
+										  </div>
+										</div>
+								    </div>
+								    <div class="col-lg-6">
+								        <div class="flip-card">
+										  <div class="flip-card-inner">
+										    <div class="flip-card-front">
+										      <img src="../Images/writeReview.png" alt="Avatar" style="width:300px;height:300px;">
+										      <div class="content-front">
+											    <h3>Write a Review</h3>
+											  </div>
+										    </div>
+										    <div class="flip-card-back">
+										    	<div class="content-back-up">
+											    <h3><button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#wGadget" data-backdrop="static">Gadget</button></h3>
+											  	</div>
+										    	<div class="content-back-down">
+											    <h3><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#wCompany" data-backdrop="static">E-commerce Company</button></h3>
+											  	</div>
+										    </div>
+										  </div>
+										</div>
+										<!-- Modal -->
+										<div class="modal fade" id="wGadget" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+										  <div class="modal-dialog modal-dialog-centered" role="document">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <h5 class="modal-title" id="exampleModalCenterTitle">Write a review about this gadget</h5>
+										        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										          <span aria-hidden="true">&times;</span>
+										        </button>
+										      </div>
+										      <div class="modal-body">
+										        <div class="container">
+												  <form>
+												    <div class="form-group">
+												      <label for="comment">Comment</label>
+												      <textarea class="form-control" rows="5" id="comment" placeholder="Share your feelings."></textarea>
+												    </div>
+												    <div>
+												    	<label for="rating">Give<span id="star" class="fa"></span></label><br/>
+												    	<label class="radio-inline">
+												        <input type="radio" name="star">1 Star
+												        </label>
+												        <label class="radio-inline">
+												        <input type="radio" name="star">2 Star
+												        </label>
+												        <label class="radio-inline">
+												        <input type="radio" name="star">3 Star
+												        </label>
+												        <label class="radio-inline">
+												        <input type="radio" name="star">4 Star
+												        </label>
+												        <label class="radio-inline">
+												       <input type="radio" name="star">5 Star
+												        </label>
+												    </div>
+												    <div>
+												    	<label for="recommend">Will you recommend?<span id="recommend" class="fa"></span></label><br/>
+												    	<label class="radio-inline">
+												        <input type="radio" name="recommend">Yes
+												        </label>
+												        <label class="radio-inline">
+												        <input type="radio" name="recommend">No
+												        </label>
+												    </div>
+												  </form>
+												</div>
+										      </div>
+										      <div class="modal-footer">
+										        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+										        <button type="button" class="btn btn-primary">Post</button>
+										      </div>
+										    </div>
+										  </div>
+										</div>
+										<!-- Modal -->
+										<div class="modal fade" id="wCompany" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+										  <div class="modal-dialog modal-dialog-centered" role="document">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <h5 class="modal-title" id="exampleModalCenterTitle">Write a review about e-commerce comapany</h5>
+										        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										          <span aria-hidden="true">&times;</span>
+										        </button>
+										      </div>
+										      <div class="modal-body">
+										        <div class="container">
+												  <form method="post" action="#">
+												    <div class="form-group">
+												      <label for="comment">Comment</label>
+												      <textarea class="form-control" rows="5" id="comment" placeholder="Share your feelings."></textarea>
+												    </div>
+												    <div>
+												    	<label for="rating">Give<span id="star2" class="fa"></span></label><br/>
+												    	<label class="radio-inline">
+												        <input type="radio" name="star">1 Star
+												        </label>
+												        <label class="radio-inline">
+												        <input type="radio" name="star">2 Star
+												        </label>
+												        <label class="radio-inline">
+												        <input type="radio" name="star">3 Star
+												        </label>
+												        <label class="radio-inline">
+												        <input type="radio" name="star">4 Star
+												        </label>
+												        <label class="radio-inline">
+												       <input type="radio" name="star">5 Star
+												        </label>
+												    </div>
+												    <div>
+												    	<label for="recommend">Will you recommend?<span id="recommend2" class="fa"></span></label><br/>
+												    	<label class="radio-inline">
+												        <input type="radio" name="recommend">Yes
+												        </label>
+												        <label class="radio-inline">
+												        <input type="radio" name="recommend">No
+												        </label>
+												    </div>
+												  </form>
+												</div>
+										      </div>
+										      <div class="modal-footer">
+										        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+										        <button type="button" class="btn btn-primary">Post</button>
+										    </div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+										      
+	<!--
+	<div class="container">
+		<div style="margin: 0px 150px 0px 150px;">
+			<h3 style="border-bottom:1.75px solid blue; text-align: center; padding-bottom: 5px; font-family: 'Comic Sans MS', cursive, sans-serif;">Similar Gadgets</h3>
+		</div>
+		<div class="container-fluid" style="margin: 0px 111px 0px 111px;">
+		    <div class="row" style="text-align: center;">
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/Asus G703VI-7200U.jpg" alt="img"><br/><a href="/gadgetinfo">Asus G703VI-7200U</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">Asus Z666UX-6200U</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C3</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C4</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C5</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C6</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C7</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C8</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C9</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C10</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C11</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C12</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C13</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C14</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C15</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C16</a></div>
+	    </div>
+	  	</div>
+    </div>
+  	<div class="container" align="center">
+	    <ul class="pagination pagination-sm">
+	      <li class="active"><a href="#">1</a></li>
+	      <li><a href="#">Next</a></li>
+	    </ul>
+  	</div>
+  	-->
+	<script>
+		$(document).ready(function(){
+		    $('[data-toggle="tooltip"]').tooltip();
+		    //Star animated for rating
+		    function ratestar() {
+			  var a;
+			  a = document.getElementById("star");
+			  a.innerHTML = "&#xf006;";
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf123;";
+			    }, 1000);
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf005;";
+			    }, 2000);
+			}
+			ratestar();
+			setInterval(ratestar, 3000);
+
+			function ratestar2() {
+			  var a;
+			  a = document.getElementById("star2");
+			  a.innerHTML = "&#xf006;";
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf123;";
+			    }, 1000);
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf005;";
+			    }, 2000);
+			}
+			ratestar2();
+			setInterval(ratestar2, 3000);
+
+			//Recommendation animated
+			function recommend() {
+			  var a;
+			  a = document.getElementById("recommend");
+			  a.innerHTML = "&#xf118;";
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf11a;";
+			    }, 1000);
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf119;";
+			    }, 2000);
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf11a;";
+			    }, 3000);
+			}
+			recommend();
+			setInterval(recommend, 4000);
+
+			//Recommendation animated
+			function recommend2() {
+			  var a;
+			  a = document.getElementById("recommend2");
+			  a.innerHTML = "&#xf118;";
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf11a;";
+			    }, 1000);
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf119;";
+			    }, 2000);
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf11a;";
+			    }, 3000);
+			}
+			recommend2();
+			setInterval(recommend2, 4000);   
+					});
+	</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Home</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+  	<link rel="stylesheet" type="text/css" href="CSS/reviewsFilp.css">
+  	<!--CDN for nav bar-->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<!--CDN for footer-->
+  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<!--CDN for JS-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!--CDN for Tooltip-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="jQuery-UI/jquery-ui.structure.css"/>
+	<link rel="stylesheet" type="text/css" href="jQuery-UI/jquery-ui.css"/>
+	<script type="text/javascript" src="jQuery-UI/jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="jQuery-UI/jquery-ui.theme.css"/>
+    <style>
+    	img {
+    		width: 80px; height: 80px;
+    	}
+    </style>
+</head>
+<body style="background-color:#f2f2ff">
+	<div id="top">
+		<nav class="navbar navbar-inverse">
+		  <div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>                        
+		      </button>
+		      <a class="navbar-brand" href="/">GadTo</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav navbar-right">
+		      	<li class="active"><a href="/">Home</a></li>
+		      	<form class="navbar-form navbar-left" action="#">
+				  	<div class="input-group">
+				    	<input type="text" class="form-control" placeholder="Search.." name="search" id="tags">
+				        <div class="input-group-btn">
+				          <button class="btn btn-default" type="submit">
+				            <i class="glyphicon glyphicon-search"></i>
+				          </button>
+				        </div>
+					</div>
+			  	</form>
+		        <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		  <img class="img-responsive" src="Images/cover.jpg" alt="Cover Photo" style="width: 100%; height: 400px;">
+		  <div class="content-front-cover">
+		    <h1 style="font-size:50px;">Browse something that matters</h1>
+		    <p><small>Stop wasting valuable time by grabing all info from one place.</small></p>
+		    <a href="#gad_cats" class="btn btn-primary btn-sm" role="button" data-toggle="tooltip" data-placement="bottom" title="See the gadgets you want"><span class="glyphicon glyphicon-arrow-down"></span> Browse Gadgets</span></a>&nbsp;<strong>or</strong> <span><a href="#" class="btn btn-success" role="button" data-toggle="tooltip" data-placement="bottom" title="Confused about gadgets? Take suggestion"><span class="glyphicon glyphicon-road"></span> Gadget Advisor</a></span>
+		  </div>
+		</nav>
+	</div>
+	<div class="container">
+	    <div class="jumbotron" style="background-color: #deeaee">
+	    	<h1>GadTo is different</h1>      
+	    	<p>Bla bla bla<br>Again, bla bla bla...</p>
+	    </div>      
+	</div>
+	<div style="margin: 0px 150px 0px 150px;">
+		<h3 style="border-bottom:1.75px solid blue; text-align: center; padding-bottom: 5px; font-family: 'Comic Sans MS', cursive, sans-serif;">Gadget Categories</h3>
+	</div>
+	<div class="container-fluid" style="margin: 0px 111px 0px 111px;">
+	    <div class="row" id="gad_cats" style="text-align: center;">
+	    	<% for(var i = 0; i < gadgetCats.length; i++){ %>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="Images/GadCats/<%= gadgetCats[i].category_name %>.png" alt="<%= gadgetCats[i].category_name %>"><br/><a href="/brands/<%= gadgetCats[i].category_name %>"><%= gadgetCats[i].category_name %></a></div>
+	        <% } %>
+	    </div>
+  	</div>
+  	<div class="container" align="center">
+	    <ul class="pagination pagination-sm">
+	      <li class="active"><a href="#">1</a></li>
+	      <li><a href="#">Next</a></li>
+	    </ul>
+  	</div>
+  	<!-- Footer -->
+	<footer class="w3-center w3-black w3-padding-64">
+	  <a href="#top" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+	  <div class="w3-xlarge w3-section">
+	    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+	    <i class="fa fa-linkedin w3-hover-opacity"></i>
+	  </div>
+	  <div>
+	  	<a href="#" target="_blank" class="w3-hover-text-green" data-toggle="tooltip" data-placement="top" title="See the FAQs">FAQ</a>&nbsp;&nbsp;&nbsp;<a href="#" target="_blank" class="w3-hover-text-green" data-toggle="tooltip" data-placement="top" title="Need help?">Help</a>&nbsp;&nbsp;&nbsp;<a href="#" target="_blank" class="w3-hover-text-green" data-toggle="tooltip" data-placement="top" title="About the system & team">About</a>&nbsp;&nbsp;&nbsp;<a href="#" target="_blank" class="w3-hover-text-green" data-toggle="tooltip" data-placement="top" title="Give feedback">Feedback</a>
+	  </div>
+	  <p>Powered by <a href="#" target="_blank" class="w3-hover-text-green" data-toggle="tooltip" data-placement="right" title="RAR & his team">GadTo</a></p>
+	  <p>© 2018 GadTo-Made with <span><i class="glyphicon glyphicon-heart" style="font-size:18px;color:red;"></i></span> for the gadget lover people of Bangladesh.</p>
+	</footer>
+	<script>
+		$(document).ready(function(){
+		    $('[data-toggle="tooltip"]').tooltip();
+		    var availableProducts = [
+      "Acer Aspire A315-21 28F1",
+      "Asus X540YA",
+      "Asus X556UQ-7200U",
+      "Asus Zenfone Max Pro (M1) ZB601KL",
+      "HP 14-BW077AU",
+      "iPhone X",
+      "iPhone 6",
+      "Rolex WRM13",
+      "Xiaomi Mi A2 (Mi 6X)"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableProducts
+    });
+  } );
+	</script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gadget Info</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+  	<link rel="stylesheet" type="text/css" href="CSS/reviewsFilp.css">
+  	<!--CDN for nav bar-->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<!--CDN for footer+social buttons-->
+  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" type="text/css" href="CSS/socialButtons.css">
+  	<!--CDN for JS-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<style>
+		#star {
+		  font-size:18px;
+		}
+		#star2 {
+		  font-size:18px;
+		}
+		#recommend {
+		  font-size:22px;
+		}
+		#recommend2 {
+		  font-size:22px;
+		}
+    	img {
+    		width: 80px; height: 80px;
+    	}
+	</style>
+</head>
+<body>
+	<!--Header-->
+	<div>
+		<nav class="navbar navbar-inverse">
+		  <div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>                        
+		      </button>
+		      <a class="navbar-brand" href="/">GadTo</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav navbar-right">
+		      	<li><a href="/">Home</a></li>
+		      	<form class="navbar-form navbar-left" action="#">
+				  	<div class="input-group">
+				    	<input type="text" class="form-control" placeholder="Search.." name="search">
+				        <div class="input-group-btn">
+				          <button class="btn btn-default" type="submit">
+				            <i class="glyphicon glyphicon-search"></i>
+				          </button>
+				        </div>
+					</div>
+			  	</form>
+		        <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+	</div>
+	<!--<div style="margin-top: 200px;">
+		<a href="#" class="fa fa-facebook"></a><br/>
+		<a href="#" class="fa fa-twitter"></a><br/>
+		<a href="#" class="fa fa-google-plus"></a><br/>
+		<a href="#" class="fa fa-linkedin"></a><br/>
+		<a href="#" class="fa fa-pinterest"></a><br/>
+	</div>-->
+	<div class="container">
+	    <div class="row">
+	        <div class="col-lg-3">
+	        	<div class="jumbotron" style="background-color: white;">
+	        		<% if(Prices.gadget_cat_name == "Computer"){ %>
+	            	<img class="img-responsive" src="../../Images/Gadgets/<%= Prices.gadget_name %>.png" alt="<%= Prices.gadget_name %>" style="width:300px; height:400px;">
+	            	<% } %>
+	        	</div>
+	        </div>
+	        <div class="col-lg-9">
+	        	<div class="jumbotron" style="background-color: white;">
+		        	<div class="container">
+		        		<% if(Prices.gadget_cat_name == "Computer"){ %>
+		  				<h2><%= Prices.gadget_name %></h2>
+		  				<% } %>
+					    <ul class="nav nav-tabs">
+						    <li><a href="/gadgetinfo/<%= Prices.gadget_cat_name %>.<%= Prices.gadget_id %>">Specifications</a></li>
+						    <li class="active"><a href="/gadgetinfoprices/<%= Prices.gadget_cat_name %>.<%= Prices.gadget_id %>">Prices</a></li>
+						    <li><a href="/gadgetinforeviews/<%= Prices.gadget_cat_name %>.<%= Prices.gadget_id %>">Reviews</a></li>
+					    </ul>
+						    	<div class="table-responsive">
+							      	<table class="table table-sm">
+									  <tbody>
+									  	<% for(var i = 0; i < Prices.length; i++){ %>
+									    <tr>
+									      <th><%= Prices[i].price %> Tk @<%= Prices[i].name %></th>
+									      <td><a class="btn btn-danger btn-sm" href="<%= Prices[i].company_gadget_link %>" role="button" data-toggle="tooltip" data-placement="right" title="Go to the site">Jump</a></td>
+									    </tr>
+									    <% } %>
+									  </tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	<!--
+	<div class="container">
+		<div style="margin: 0px 150px 0px 150px;">
+			<h3 style="border-bottom:1.75px solid blue; text-align: center; padding-bottom: 5px; font-family: 'Comic Sans MS', cursive, sans-serif;">Similar Gadgets</h3>
+		</div>
+		<div class="container-fluid" style="margin: 0px 111px 0px 111px;">
+		    <div class="row" style="text-align: center;">
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/Asus G703VI-7200U.jpg" alt="img"><br/><a href="/gadgetinfo">Asus G703VI-7200U</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">Asus Z666UX-6200U</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C3</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C4</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C5</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C6</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C7</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C8</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C9</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C10</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C11</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C12</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C13</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C14</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C15</a></div>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../Images/Gadgets/dummy.png" alt="img"><br/><a href="#">C16</a></div>
+	    </div>
+	  	</div>
+    </div>
+  	<div class="container" align="center">
+	    <ul class="pagination pagination-sm">
+	      <li class="active"><a href="#">1</a></li>
+	      <li><a href="#">Next</a></li>
+	    </ul>
+  	</div>
+  	-->
+	<script>
+		$(document).ready(function(){
+		    $('[data-toggle="tooltip"]').tooltip();
+		    //Star animated for rating
+		    function ratestar() {
+			  var a;
+			  a = document.getElementById("star");
+			  a.innerHTML = "&#xf006;";
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf123;";
+			    }, 1000);
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf005;";
+			    }, 2000);
+			}
+			ratestar();
+			setInterval(ratestar, 3000);
+
+			function ratestar2() {
+			  var a;
+			  a = document.getElementById("star2");
+			  a.innerHTML = "&#xf006;";
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf123;";
+			    }, 1000);
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf005;";
+			    }, 2000);
+			}
+			ratestar2();
+			setInterval(ratestar2, 3000);
+
+			//Recommendation animated
+			function recommend() {
+			  var a;
+			  a = document.getElementById("recommend");
+			  a.innerHTML = "&#xf118;";
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf11a;";
+			    }, 1000);
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf119;";
+			    }, 2000);
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf11a;";
+			    }, 3000);
+			}
+			recommend();
+			setInterval(recommend, 4000);
+
+			//Recommendation animated
+			function recommend2() {
+			  var a;
+			  a = document.getElementById("recommend2");
+			  a.innerHTML = "&#xf118;";
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf11a;";
+			    }, 1000);
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf119;";
+			    }, 2000);
+			  setTimeout(function () {
+			      a.innerHTML = "&#xf11a;";
+			    }, 3000);
+			}
+			recommend2();
+			setInterval(recommend2, 4000);   
+					});
+	</script>
+</body>
+</html>

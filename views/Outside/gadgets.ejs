@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gadgets</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+  	<!--CDN for nav bar-->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<!--CDN for footer-->
+  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<!--CDN for JS-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<style>
+    	img {
+    		width: 80px; height: 80px;
+    	}
+    </style>
+</head>
+<body style="background-color:#f2f2ff">
+	<!--Header-->
+	<div id="home">
+		<nav class="navbar navbar-inverse">
+		  <div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>                        
+		      </button>
+		      <a class="navbar-brand" href="/">GadTo</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav navbar-right">
+		      	<li><a href="/">Home</a></li>
+		      	<form class="navbar-form navbar-left" action="#">
+				  	<div class="input-group">
+				    	<input type="text" class="form-control" placeholder="Search.." name="search">
+				        <div class="input-group-btn">
+				          <button class="btn btn-default" type="submit">
+				            <i class="glyphicon glyphicon-search"></i>
+				          </button>
+				        </div>
+					</div>
+			  	</form>
+		        <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+	</div>
+	<div class="container">
+		<div style="margin: 0px 150px 0px 150px;">
+			<h3 style="border-bottom:1.75px solid blue; text-align: center; padding-bottom: 5px; font-family: 'Comic Sans MS', cursive, sans-serif;">Gadgets</h3>
+		</div>
+		<div class="container-fluid" style="margin: 0px 111px 0px 111px;">
+		    <div class="row" style="text-align: center;">
+	        <% for(var i = 0; i < gadgets.length; i++){ %>
+	        <div class="col-sm-3" style="background-color:lavender;"><img src="../../Images/gadgets/<%= gadgets[i].gadget_name %>.png" alt="<%= gadgets[i].gadget_name %>"><br/>
+	        	<a href="/gadgetinfo/<%= gadgets[i].category_name %>.<%= gadgets[i].gadget_id %>"><%= gadgets[i].gadget_name %></a></div>
+	        <% } %>
+	    </div>
+	  	</div>
+    </div>
+  	<div class="container" align="center">
+	    <ul class="pagination pagination-sm">
+	      <li class="active"><a href="#">1</a></li>
+	      <li><a href="#">Next</a></li>
+	    </ul>
+  	</div>
+</body>
+</html>
